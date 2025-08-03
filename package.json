@@ -1,0 +1,64 @@
+{
+  "name": "ns-fivem-react-boilerplate",
+  "version": "1.0.0",
+  "description": "A React boilerplate template for FiveM NUI development",
+  "main": "index.js",
+  "type": "module",
+  "keywords": ["fivem", "react", "nui", "boilerplate", "template", "typescript", "vite", "tailwindcss"],
+  "author": "Nebula Studios",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nebula-Studios/ns-fivem-react-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nebula-Studios/ns-fivem-react-boilerplate/issues"
+  },
+  "files": [
+    "src/",
+    "public/",
+    "index.html",
+    "vite.config.ts",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "postcss.config.mjs",
+    ".gitignore",
+    "README.md"
+  ],
+  "bin": {
+    "create-fivem-react-app": "./bin/create-app.js"
+  },
+  "compilerOptions": {
+    "moduleResolution": "bundler"
+  },
+  "scripts": {
+    "start": "vite",
+    "start:game": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "node bin/create-app.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.34.1",
+    "@tailwindcss/vite": "^4.1.11",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4"
+  }
+}
