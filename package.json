@@ -4,29 +4,39 @@
   "description": "A React boilerplate template for FiveM NUI development",
   "main": "index.js",
   "type": "module",
-  "keywords": ["fivem", "react", "nui", "boilerplate", "template", "typescript", "vite", "tailwindcss"],
+  "keywords": [
+    "fivem",
+    "react",
+    "nui",
+    "boilerplate",
+    "template",
+    "typescript",
+    "vite",
+    "tailwindcss"
+  ],
   "author": "Nebula Studios",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nebula-Studios/ns-fivem-react-boilerplate.git"
+    "url": "git+https://github.com/Nebula-Studios/ns-fivem-react-boilerplate.git"
   },
   "bugs": {
     "url": "https://github.com/Nebula-Studios/ns-fivem-react-boilerplate/issues"
   },
   "files": [
     "src/",
-    "public/",
     "index.html",
     "vite.config.ts",
     "tsconfig.json",
     "tsconfig.node.json",
     "postcss.config.mjs",
     ".gitignore",
-    "README.md"
+    "README.md",
+    "bin/",
+    "LICENSE"
   ],
   "bin": {
-    "create-fivem-react-app": "./bin/create-app.js"
+    "create-fivem-react-app": "bin/create-app.js"
   },
   "compilerOptions": {
     "moduleResolution": "bundler"
@@ -35,9 +45,7 @@
     "start": "vite",
     "start:game": "vite build --watch",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "prepare": "node bin/create-app.js",
-    "prepublishOnly": "npm run build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.34.1",

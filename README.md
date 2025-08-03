@@ -1,22 +1,22 @@
 # NS FiveM React Boilerplate
 
-Un template moderno per lo sviluppo di interfacce NUI in FiveM utilizzando React, TypeScript, Vite e TailwindCSS.
+A modern template for developing FiveM NUI interfaces using React, TypeScript, Vite, and TailwindCSS.
 
-## ✨ Caratteristiche
+## ✨ Features
 
-- **React 19** con TypeScript
-- **Vite** per un build veloce e hot reload
-- **TailwindCSS 4.0** per lo styling
-- **Hooks personalizzati** per l'integrazione FiveM NUI
-- **ESLint** configurato per React
-- **Struttura del progetto** ottimizzata per FiveM
-- **Provider per la visibilità** dell'interfaccia
+- **React 19** with TypeScript
+- **Vite** for fast builds and hot reload
+- **TailwindCSS 4.0** for styling
+- **Custom hooks** for FiveM NUI integration
+- **ESLint** configured for React
+- **Project structure** optimized for FiveM
+- **Visibility provider** for interface management
 
-## 🚀 Installazione rapida
+## 🚀 Quick Start
 
-Puoi creare un nuovo progetto utilizzando questo template in due modi:
+You can create a new project using this template in two ways:
 
-### Metodo 1: Utilizzando npx (raccomandato)
+### Method 1: Using npx (recommended)
 
 ```bash
 npx ns-fivem-react-boilerplate my-fivem-resource
@@ -24,23 +24,23 @@ cd my-fivem-resource
 npm install
 ```
 
-### Metodo 2: Clone manuale
+### Method 2: Manual clone
 
 ```bash
-git clone https://github.com/tuousername/ns-fivem-react-boilerplate.git my-fivem-resource
+git clone https://github.com/Nebula-Studios/ns-fivem-react-boilerplate.git my-fivem-resource
 cd my-fivem-resource
 rm -rf .git
 npm install
 ```
 
-## 📋 Struttura del progetto
+## 📋 Project Structure
 
 ```
 my-fivem-resource/
 ├── src/
-│   ├── components/         # Componenti React
+│   ├── components/         # React components
 │   │   └── App.tsx
-│   ├── hooks/             # Hook personalizzati
+│   ├── hooks/             # Custom hooks
 │   │   └── useNuiEvent.ts
 │   ├── providers/         # Context providers
 │   │   └── VisibilityProvider.tsx
@@ -48,9 +48,9 @@ my-fivem-resource/
 │   │   ├── debugData.ts
 │   │   ├── fetchNui.ts
 │   │   └── misc.ts
-│   ├── index.css          # Stili globali
+│   ├── index.css          # Global styles
 │   ├── main.tsx           # Entry point
-│   └── vite-env.d.ts      # Definizioni TypeScript
+│   └── vite-env.d.ts      # TypeScript definitions
 ├── index.html
 ├── package.json
 ├── vite.config.ts
@@ -58,37 +58,37 @@ my-fivem-resource/
 └── postcss.config.mjs
 ```
 
-## 🛠️ Script disponibili
+## 🛠️ Available Scripts
 
 ```bash
-# Avvia il server di sviluppo
+# Start development server
 npm start
 
-# Build per sviluppo con watch mode (per FiveM)
+# Build for development with watch mode (for FiveM)
 npm run start:game
 
-# Build di produzione
+# Production build
 npm run build
 
-# Preview del build
+# Preview build
 npm run preview
 ```
 
-## 🎯 Utilizzo per FiveM
+## 🎯 FiveM Usage
 
-### 1. Sviluppo
+### 1. Development
 
-Durante lo sviluppo, usa:
+During development, use:
 
 ```bash
 npm run start:game
 ```
 
-Questo comando builderà il progetto in modalità watch, aggiornando automaticamente i file quando fai modifiche.
+This command will build the project in watch mode, automatically updating files when you make changes.
 
-### 2. Comunicazione NUI
+### 2. NUI Communication
 
-Il template include hook e utility per comunicare con il client FiveM:
+The template includes hooks and utilities for communicating with the FiveM client:
 
 #### useNuiEvent Hook
 
@@ -121,53 +121,53 @@ const handleClick = async () => {
 };
 ```
 
-### 3. Gestione della visibilità
+### 3. Visibility Management
 
-Il `VisibilityProvider` gestisce automaticamente la visibilità dell'interfaccia:
+The `VisibilityProvider` automatically manages interface visibility:
 
 ```tsx
-// L'interfaccia si nasconderà automaticamente quando si preme ESC
-// o quando riceve l'evento 'setVisible' con false
+// The interface will automatically hide when ESC is pressed
+// or when it receives the 'setVisible' event with false
 ```
 
-## 🎨 Personalizzazione
+## 🎨 Customization
 
 ### TailwindCSS
 
-Il progetto utilizza TailwindCSS 4.0. Puoi personalizzare i colori e i temi modificando il file di configurazione CSS in `src/index.css`.
+The project uses TailwindCSS 4.0. You can customize colors and themes by modifying the CSS configuration file in `src/index.css`.
 
 ### TypeScript
 
-Le configurazioni TypeScript sono ottimizzate per React e Vite. Puoi modificare `tsconfig.json` per le tue esigenze specifiche.
+TypeScript configurations are optimized for React and Vite. You can modify `tsconfig.json` for your specific needs.
 
-## 📦 Build e deployment
+## 📦 Build and Deployment
 
-1. **Per sviluppo FiveM:**
+1. **For FiveM development:**
 
    ```bash
    npm run start:game
    ```
 
-2. **Per produzione:**
+2. **For production:**
    ```bash
    npm run build
    ```
 
-I file buildati saranno nella cartella `dist/` e possono essere copiati nella tua risorsa FiveM.
+Built files will be in the `dist/` folder and can be copied to your FiveM resource.
 
-## 🤝 Contribuire
+## 🤝 Contributing
 
-1. Fork del progetto
-2. Crea un branch per la tua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit delle modifiche (`git commit -m 'Add some AmazingFeature'`)
-4. Push del branch (`git push origin feature/AmazingFeature`)
-5. Apri una Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licenza
+## 📄 License
 
-Questo progetto è rilasciato sotto licenza MIT. Vedi il file `LICENSE` per maggiori dettagli.
+This project is released under the MIT License. See the `LICENSE` file for more details.
 
-## 🙏 Riconoscimenti
+## 🙏 Acknowledgments
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)

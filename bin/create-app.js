@@ -11,62 +11,59 @@ function createApp() {
   const projectName = process.argv[2];
 
   if (!projectName) {
-    console.error("❌ Errore: Specifica il nome del progetto");
-    console.log("💡 Uso: npx ns-fivem-react-boilerplate <nome-progetto>");
+    console.error("❌ Error: Please specify a project name");
+    console.log("💡 Usage: npx ns-fivem-react-boilerplate <project-name>");
     process.exit(1);
   }
 
   if (fs.existsSync(projectName)) {
-    console.error(`❌ Errore: La cartella "${projectName}" esiste già`);
+    console.error(`❌ Error: Folder "${projectName}" already exists`);
     process.exit(1);
   }
 
-  console.log(`🚀 Creazione del progetto FiveM React: ${projectName}`);
+  console.log(`🚀 Creating FiveM React project: ${projectName}`);
 
   try {
-    // Crea la cartella del progetto
+    // Create project folder
     fs.mkdirSync(projectName);
     process.chdir(projectName);
 
-    // Inizializza git
-    console.log("📦 Inizializzazione del repository...");
+    // Initialize git
+    console.log("📦 Initializing repository...");
     execSync("git init", { stdio: "inherit" });
 
-    // Clona il template
-    console.log("📥 Download del template...");
+    // Clone template
+    console.log("📥 Downloading template...");
     execSync(
-      `git remote add origin https://github.com/tuousername/ns-fivem-react-boilerplate.git`,
+      `git remote add origin https://github.com/Nebula-Studios/ns-fivem-react-boilerplate.git`,
       { stdio: "inherit" }
     );
     execSync("git fetch origin", { stdio: "inherit" });
     execSync("git checkout -b main origin/main", { stdio: "inherit" });
 
-    // Rimuovi il riferimento al repository originale
+    // Remove reference to original repository
     execSync("git remote remove origin", { stdio: "inherit" });
 
-    // Aggiorna il package.json con il nuovo nome
+    // Update package.json with new name
     const packageJsonPath = path.join(process.cwd(), "package.json");
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
     packageJson.name = projectName;
-    delete packageJson.bin; // Rimuove il bin dal progetto finale
+    delete packageJson.bin; // Remove bin from final project
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
-    // Installa le dipendenze
-    console.log("📦 Installazione delle dipendenze...");
+    // Install dependencies
+    console.log("📦 Installing dependencies...");
     execSync("npm install", { stdio: "inherit" });
 
-    console.log(`\n✅ Progetto "${projectName}" creato con successo!`);
-    console.log("\n🎯 Prossimi passi:");
+    console.log(`\n✅ Project "${projectName}" created successfully!`);
+    console.log("\n🎯 Next steps:");
     console.log(`   cd ${projectName}`);
-    console.log("   npm start          # Per sviluppo normale");
-    console.log("   npm run start:game # Per sviluppo FiveM (con watch)");
-    console.log("   npm run build      # Per build di produzione");
-    console.log("\n📖 Leggi il README.md per maggiori informazioni!");
+    console.log("   npm start          # For normal development");
+    console.log("   npm run start:game # For FiveM development (with watch)");
+    console.log("   npm run build      # For production build");
+    console.log("\n📖 Read the README.md for more information!");
   } catch (error) {
-    console.error(
-      "❌ Errore durante la creazione del progetto:",
-      error.message
-    );
+    console.error("❌ Error creating project:", error.message);
     process.exit(1);
   }
 }
