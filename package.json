@@ -1,6 +1,6 @@
 {
   "name": "ns-fivem-react-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React boilerplate template for FiveM NUI development",
   "main": "index.js",
   "type": "module",
@@ -35,9 +35,6 @@
     "bin/",
     "LICENSE"
   ],
-  "bin": {
-    "create-fivem-react-app": "bin/create-app.js"
-  },
   "compilerOptions": {
     "moduleResolution": "bundler"
   },
@@ -48,12 +45,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@tabler/icons-react": "^3.34.1",
     "@tailwindcss/vite": "^4.1.11",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
